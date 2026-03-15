@@ -19,7 +19,7 @@ Un sito web moderno costruito con **Next.js 14**, **TypeScript**, **Tailwind CSS
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
-- **Linguaggio**: TypeScript
+- **Linguaggio**: TypeScript.
 - **Styling**: Tailwind CSS
 - **Animazioni**: framer-motion
 - **Utilities**: clsx
