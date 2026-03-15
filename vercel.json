@@ -3,12 +3,9 @@
   "devCommand": "next dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_API_URL",
-      "value": "https://api.facesynth.io"
-    }
-  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://api.facesynth.io"
+  },
   "headers": [
     {
       "source": "/(.*)",
