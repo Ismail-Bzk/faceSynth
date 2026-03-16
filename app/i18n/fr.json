@@ -1,0 +1,297 @@
+{
+  "common": {
+    "language": "Français",
+    "home": "Accueil",
+    "about": "À propos",
+    "features": "Fonctionnalités",
+    "pricing": "Tarification",
+    "contact": "Contact",
+    "learnMore": "En savoir plus",
+    "getStarted": "Commencer",
+    "readMore": "Lire la suite"
+  },
+  "hero": {
+    "title": "FaceSynth – Pack de Visages Synthétiques RGPD",
+    "subtitle": "Dataset 100% conforme RGPD pour entraîner vos modèles de vision par ordinateur",
+    "cta1": "Obtenir un sample pack",
+    "cta2": "Demander une démo",
+    "trustBadge": "Trusted by AI teams worldwide"
+  },
+  "features": [
+    {
+      "title": "Conformité RGPD",
+      "description": "100% synthétique, zéro donnée réelle, zéro problème de consentement"
+    },
+    {
+      "title": "Contrôle Total",
+      "description": "Générez exactement les variations que vous besoin"
+    },
+    {
+      "title": "Annotations Complètes",
+      "description": "Points de repère faciaux, expressions, poses, occlusions"
+    }
+  ],
+  "problemSolution": {
+    "title": "Pourquoi FaceSynth?",
+    "problems": [
+      {
+        "title": "Données réelles limitées",
+        "description": "Impossible d'avoir assez de données sans problèmes légaux"
+      },
+      {
+        "title": "Coût d'annotation énorme",
+        "description": "Annoter manuellement des milliers d'images coûte cher"
+      },
+      {
+        "title": "Biais et diversité",
+        "description": "Difficile d'obtenir une représentation équitable"
+      }
+    ],
+    "solutions": [
+      {
+        "title": "Dataset synthétique illimité",
+        "description": "Générez autant d'images que vous voulez, légalement"
+      },
+      {
+        "title": "Annotations automatiques",
+        "description": "Toutes les annotations incluses, zéro effort manuel"
+      },
+      {
+        "title": "Diversité contrôlée",
+        "description": "Choisissez le genre, l'âge, l'ethnie, etc."
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Avantages FaceSynth",
+    "items": [
+      {
+        "title": "✅ RGPD Compliant",
+        "description": "Donnée 100% synthétique, aucun problème légal"
+      },
+      {
+        "title": "🎮 Contrôle Total",
+        "description": "Personnalisez chaque aspect des visages"
+      },
+      {
+        "title": "📊 Annotations Riches",
+        "description": "Repères faciaux, expressions, poses, occlusions"
+      },
+      {
+        "title": "💰 Coût Réduit",
+        "description": "Jusqu'à 80% moins cher que l'annotation manuelle"
+      },
+      {
+        "title": "🔄 Reproductibilité",
+        "description": "Résultats constants et reproductibles"
+      },
+      {
+        "title": "🚀 Flexibilité",
+        "description": "Générez de nouveaux datasets à la demande"
+      }
+    ]
+  },
+  "packageContent": {
+    "title": "Contenu du Pack",
+    "subtitle": "Qu'est-ce qui est inclus",
+    "specs": [
+      {
+        "title": "10 000 Images",
+        "description": "Dataset de base extensible"
+      },
+      {
+        "title": "1024×1024 px",
+        "description": "Résolution haute qualité"
+      },
+      {
+        "title": "PNG/JPEG",
+        "description": "Formats standards compatibles"
+      },
+      {
+        "title": "JSON/CSV",
+        "description": "Annotations structurées"
+      }
+    ],
+    "annotations": "Annotations Incluses",
+    "annotationsList": [
+      "Points de repère faciaux (68 points)",
+      "Expression faciale",
+      "Pose de la tête",
+      "Occlusions",
+      "Âge estimé",
+      "Genre",
+      "Ethnie",
+      "Accessoires (lunettes, chapeau, etc.)"
+    ],
+    "delivery": "Format de Livraison"
+  },
+  "variations": {
+    "title": "Contrôlez Chaque Aspect",
+    "subtitle": "Générateurs de variations",
+    "items": [
+      "Genre",
+      "Âge",
+      "Ethnie",
+      "Coiffure",
+      "Accessoires",
+      "Expressions",
+      "Occlusions",
+      "Lighting"
+    ],
+    "confidence": "Avec scores de confiance pour chaque attribut"
+  },
+  "useCases": {
+    "title": "Cas d'Usage",
+    "items": [
+      {
+        "title": "Détection Faciale",
+        "description": "Entraînez des modèles robustes sans données réelles"
+      },
+      {
+        "title": "Eye-Tracking",
+        "description": "Datasets d'yeux synthétiques pour suivi oculaire"
+      },
+      {
+        "title": "Biométrie Faciale",
+        "description": "Authentification faciale sécurisée et diverse"
+      },
+      {
+        "title": "Robustesse Adversariale",
+        "description": "Testez contre les occlusions et variations"
+      },
+      {
+        "title": "Pré-entraînement",
+        "description": "Pre-training avant affinage sur données réelles"
+      },
+      {
+        "title": "Data Augmentation",
+        "description": "Augmentez vos datasets réels existants"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Tarification Simple et Transparente",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "1,500 - 3,000€",
+        "description": "10,000 images synthétiques",
+        "features": [
+          "10 000 images 1024×1024",
+          "Annotations complètes (JSON/CSV)",
+          "Support par email",
+          "Licence commerciale",
+          "Mises à jour gratuites (6 mois)"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "5,000 - 12,000€",
+        "description": "50,000 - 200,000 images",
+        "features": [
+          "50 000 - 200 000 images personnalisées",
+          "Annotations avancées",
+          "Support prioritaire (Slack)",
+          "Licence commerciale illimitée",
+          "Customisations mineures",
+          "Mises à jour gratuites (12 mois)"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis",
+        "description": "Solution sur mesure",
+        "features": [
+          "Volume personnalisé",
+          "Annotations sur mesure",
+          "Support dédié 24/7",
+          "Licence et droits complets",
+          "Customisations majeures",
+          "Formation incluse"
+        ]
+      }
+    ]
+  },
+  "compliance": {
+    "title": "Conformité & Garanties",
+    "guarantees": [
+      {
+        "title": "✅ 100% RGPD",
+        "description": "Données synthétiques, aucune donnée personnelle"
+      },
+      {
+        "title": "✅ Légal",
+        "description": "Aucun problème de droit à l'image ou consentement"
+      },
+      {
+        "title": "✅ Transparent",
+        "description": "Audit de conformité à la demande"
+      },
+      {
+        "title": "✅ Support",
+        "description": "Rapport de conformité inclus"
+      }
+    ],
+    "dpoChecklist": "Checklist DPO",
+    "dpoItems": [
+      "Donnée synthétique: ✅",
+      "Aucune donnée personnelle: ✅",
+      "Droits respectés: ✅",
+      "Audit possible: ✅",
+      "Documentation fournie: ✅",
+      "Support DPO: ✅"
+    ],
+    "contact": "Contacter notre DPO"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "items": [
+      {
+        "question": "Comment vérifier que c'est vraiment synthétique?",
+        "answer": "Nous fournissons un rapport de conformité détaillé avec audit indépendant. Les images synthétiques peuvent être identifiées par analyse forensique si nécessaire."
+      },
+      {
+        "question": "Avez-vous une preuve RGPD?",
+        "answer": "Oui, nous fournissons une attestation RGPD signée par notre DPO avec rapport d'audit technique complet."
+      },
+      {
+        "question": "Pouvez-vous générer des datasets personnalisés?",
+        "answer": "Absolument! Plan Pro et Enterprise offrent des customisations. Parlez avec notre équipe sales."
+      },
+      {
+        "question": "Quelle est la qualité par rapport aux vraies images?",
+        "answer": "Notre qualité 1024×1024 convient parfaitement pour l'entraînement. Plus haute résolution disponible sur demande."
+      },
+      {
+        "question": "Puis-je combiner avec mes données réelles?",
+        "answer": "Oui, c'est un cas d'usage courant! FaceSynth peut augmenter vos datasets réels existants."
+      },
+      {
+        "question": "Quel est le délai de livraison?",
+        "answer": "Plan Starter: 2-3 jours. Plan Pro: 1-2 semaines. Enterprise: À discuter."
+      },
+      {
+        "question": "Quelle est votre garantie?",
+        "answer": "Garantie de conformité RGPD 100% ou remboursement. Support technique pendant 12 mois minimum."
+      },
+      {
+        "question": "Quel support obtenez-je?",
+        "answer": "Email (Starter), Slack prioritaire (Pro), Support 24/7 dédié (Enterprise)."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "FaceSynth – Les données synthétiques pour l'IA responsable",
+    "product": "Produit",
+    "features": "Fonctionnalités",
+    "pricing": "Tarification",
+    "support": "Support",
+    "documentation": "Documentation",
+    "contact": "Contact",
+    "legal": "Juridique",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "© 2026 FaceSynth. Tous droits réservés."
+  }
+}
