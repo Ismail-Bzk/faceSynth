@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import '../globals.css';
 import { ReactNode } from 'react';
 
@@ -27,10 +29,13 @@ interface LocaleLayoutProps {
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params: { locale },
 }: LocaleLayoutProps) {
+  // 🔑 CRITICAL: Charger les messages pour la locale courante
+  const messages = await getMessages({ locale });
+
   return (
     <html lang={locale}>
       <head>
@@ -38,7 +43,10 @@ export default function LocaleLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="antialiased" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-        {children}
+        {/* 🔑 CRITICAL: Wrapper NextIntlClientProvider pour les composants 'use client' */}
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

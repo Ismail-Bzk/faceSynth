@@ -8,10 +8,11 @@ import { LeadCaptureForm } from './LeadCaptureForm';
 
 /**
  * Section Hero - Présentation principale du produit FaceSynth
- * Inclut un titre accrocheur, sous-titre, CTA principaux et visuel hero
- * Support multilingue avec next-intl
+ * ✅ INTÉGRATION I18N: Utilise useTranslations() pour charger les textes
+ * Les clés utilisées: 'hero.title', 'hero.subtitle', 'hero.cta1', 'hero.cta2', 'features'
  */
 export const HeroSection: React.FC = () => {
+  // 🔑 Charger les traductions avec useTranslations()
   const t = useTranslations();
   const [showForm, setShowForm] = useState(false);
 
@@ -47,28 +48,25 @@ export const HeroSection: React.FC = () => {
               className="text-h1 text-neutral-text leading-tight"
               variants={itemVariants}
             >
-              Entraînez vos modèles IA avec confiance,{' '}
-              <span className="text-primary-blue">sans données personnelles</span>
+              {t('hero.title')}
             </motion.h1>
 
             <motion.p
               className="text-lg text-neutral-subtext leading-relaxed max-w-xl"
               variants={itemVariants}
             >
-              FaceSynth fournit des milliers de visages synthétiques réalistes, entièrement 
-              annotés et 100% conformes RGPD. Entraînez vos modèles de vision par ordinateur 
-              rapidement, sans risques juridiques ni obstacles éthiques.
+              {t('hero.subtitle')}
             </motion.p>
 
             {/* Points clés rapides */}
             <motion.div className="space-y-3 pt-4" variants={itemVariants}>
               {[
-                '✓ Aucune donnée personnelle réelle',
-                '✓ Annotations riches (pose, regard, expression, etc.)',
-                '✓ Livraison immédiate en haute résolution',
+                t('features.0.description'),
+                t('features.1.description'),
+                t('features.2.description'),
               ].map((point, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <span className="text-primary-blue font-bold text-lg"></span>
+                  <span className="text-primary-blue font-bold text-lg">✓</span>
                   <span className="text-neutral-text">{point}</span>
                 </div>
               ))}
@@ -84,7 +82,7 @@ export const HeroSection: React.FC = () => {
                 size="lg"
                 onClick={() => setShowForm(true)}
               >
-                Obtenir un sample pack
+                {t('hero.cta1')}
               </Button>
               <Button
                 variant="outline"
@@ -94,7 +92,7 @@ export const HeroSection: React.FC = () => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Demander une démo
+                {t('hero.cta2')}
               </Button>
             </motion.div>
           </motion.div>
