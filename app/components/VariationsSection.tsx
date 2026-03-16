@@ -10,10 +10,16 @@ import { Card } from './common/Card';
  * Section Variations et contrôle des distributions
  * Support multilingue avec next-intl
  */
+
+interface Variation {
+  label: string;
+  options: string;
+}
+
 export const VariationsSection: React.FC = () => {
   const t = useTranslations();
   
-  const variations = t.raw('variations.items');
+  const variations = t.raw('variations.items') as Variation[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

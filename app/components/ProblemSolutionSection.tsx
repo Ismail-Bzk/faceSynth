@@ -11,11 +11,18 @@ import { Card } from './common/Card';
  * Présente les défis actuels et comment FaceSynth les résout
  * Support multilingue avec next-intl
  */
+
+interface ProblemOrSolution {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
 export const ProblemSolutionSection: React.FC = () => {
   const t = useTranslations();
   
-  const problems = t.raw('problemSolution.problems');
-  const solutions = t.raw('problemSolution.solutions');
+  const problems = t.raw('problemSolution.problems') as ProblemOrSolution[];
+  const solutions = t.raw('problemSolution.solutions') as ProblemOrSolution[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

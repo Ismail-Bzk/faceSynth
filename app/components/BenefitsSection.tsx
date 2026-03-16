@@ -10,10 +10,17 @@ import { Card } from './common/Card';
  * Section Bénéfices clés
  * Support multilingue avec next-intl
  */
+
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export const BenefitsSection: React.FC = () => {
   const t = useTranslations();
   
-  const benefits = t.raw('benefits.items');
+  const benefits = t.raw('benefits.items') as Benefit[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

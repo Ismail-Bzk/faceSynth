@@ -11,10 +11,21 @@ import { Button } from './common/Button';
  * Section Pricing et licences
  * Support multilingue avec next-intl
  */
+
+interface Plan {
+  name: string;
+  description: string;
+  price: string;
+  images: string;
+  features: string[];
+  cta: string;
+  highlighted: boolean;
+}
+
 export const PricingSection: React.FC = () => {
   const t = useTranslations();
   
-  const plans = t.raw('pricing.plans');
+  const plans = t.raw('pricing.plans') as Plan[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

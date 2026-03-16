@@ -11,10 +11,17 @@ import { Card } from './common/Card';
  * Rassurez fortement sur les aspects de conformité
  * Support multilingue avec next-intl
  */
+
+interface Guarantee {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export const ComplianceSection: React.FC = () => {
   const t = useTranslations();
   
-  const guarantees = t.raw('compliance.guarantees');
+  const guarantees = t.raw('compliance.guarantees') as Guarantee[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

@@ -8,11 +8,22 @@ import { motion } from 'framer-motion';
  * Composant Footer
  * Support multilingue avec next-intl
  */
+
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
 export const Footer: React.FC = () => {
   const t = useTranslations();
   const currentYear = new Date().getFullYear();
 
-  const sections = t.raw('footer.sections');
+  const sections = t.raw('footer.sections') as FooterSection[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

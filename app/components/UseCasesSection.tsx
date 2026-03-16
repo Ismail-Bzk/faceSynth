@@ -10,10 +10,17 @@ import { Card } from './common/Card';
  * Section Cas d'usage
  * Support multilingue avec next-intl
  */
+
+interface UseCase {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export const UseCasesSection: React.FC = () => {
   const t = useTranslations();
   
-  const useCases = t.raw('useCases.items');
+  const useCases = t.raw('useCases.items') as UseCase[];
 
   const containerVariants = {
     hidden: { opacity: 0 },

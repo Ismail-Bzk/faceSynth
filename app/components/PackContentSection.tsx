@@ -11,11 +11,18 @@ import { Card } from './common/Card';
  * Détail des images, résolutions, formats et métadonnées
  * Support multilingue avec next-intl
  */
+
+interface Spec {
+  label: string;
+  value: string;
+  icon: string;
+}
+
 export const PackContentSection: React.FC = () => {
   const t = useTranslations();
   
-  const specs = t.raw('packContent.specs');
-  const annotations = t.raw('packContent.annotations');
+  const specs = t.raw('packContent.specs') as Spec[];
+  const annotations = t.raw('packContent.annotations') as string[];
 
   const containerVariants = {
     hidden: { opacity: 0 },
