@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
@@ -8,43 +9,13 @@ import { Card } from './common/Card';
 /**
  * Section Problème / Solution
  * Présente les défis actuels et comment FaceSynth les résout
+ * Support multilingue avec next-intl
  */
 export const ProblemSolutionSection: React.FC = () => {
-  const problems = [
-    {
-      title: 'Collecte coûteuse et risquée',
-      description: 'Accès limité aux données réelles, consentements à gérer, risques légaux importants.',
-      icon: '⚠️',
-    },
-    {
-      title: 'Contraintes réglementaires',
-      description: 'CNIL, IRB, RGPD : des obstacles administratifs complexes et chronophages.',
-      icon: '⚖️',
-    },
-    {
-      title: 'Biais des datasets publics',
-      description: 'Manque de diversité contrôlée, représentation non équitable, reproduction difficile.',
-      icon: '📊',
-    },
-  ];
-
-  const solutions = [
-    {
-      title: '100% synthétique',
-      description: 'Aucune donnée personnelle réelle. Conforme RGPD par nature.',
-      icon: '✨',
-    },
-    {
-      title: 'Contrôle total',
-      description: 'Définissez la distribution démographique, les variations et les annotations.',
-      icon: '🎛️',
-    },
-    {
-      title: 'Reproductibilité',
-      description: 'Généré procéduralement avec seed. Exact et répétable à 100%.',
-      icon: '🔄',
-    },
-  ];
+  const t = useTranslations();
+  
+  const problems = t.raw('problemSolution.problems');
+  const solutions = t.raw('problemSolution.solutions');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,7 +41,7 @@ export const ProblemSolutionSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.h2 className="text-h2 text-center mb-12" variants={itemVariants}>
-            Les défis actuels de la data vision
+            {t('problemSolution.title')}
           </motion.h2>
 
           <motion.div
@@ -104,7 +75,7 @@ export const ProblemSolutionSection: React.FC = () => {
           variants={containerVariants}
         >
           <motion.h2 className="text-h2 text-center mb-12" variants={itemVariants}>
-            La solution : FaceSynth
+            {t('problemSolution.solutionTitle')}
           </motion.h2>
 
           <motion.div

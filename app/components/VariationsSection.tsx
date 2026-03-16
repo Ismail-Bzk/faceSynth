@@ -1,24 +1,19 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
 
 /**
  * Section Variations et contrôle des distributions
+ * Support multilingue avec next-intl
  */
 export const VariationsSection: React.FC = () => {
-  const variations = [
-    { label: 'Genre', options: 'Masculin, Féminin, Neutre' },
-    { label: 'Âge apparent', options: 'Enfants, Adolescents, Adultes, Seniors' },
-    { label: 'Ethnies synthétiques', options: 'Diversité contrôlée et équitable' },
-    { label: 'Coiffures', options: 'Large gamme d\'adaptations capillaires' },
-    { label: 'Accessoires', options: 'Lunettes, bijoux, chapeau, etc.' },
-    { label: 'Expressions faciales', options: 'Neutre, joie, colère, tristesse, surprise' },
-    { label: 'Occlusions légères', options: 'Partielles et contrôlées' },
-    { label: 'Éclairage', options: 'Frontaux, latéraux, ardents variés' },
-  ];
+  const t = useTranslations();
+  
+  const variations = t.raw('variations.items');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,14 +37,13 @@ export const VariationsSection: React.FC = () => {
         variants={containerVariants}
       >
         <motion.h2 className="text-h2 text-center mb-4" variants={itemVariants}>
-          Contrôle total sur la diversité
+          {t('variations.title')}
         </motion.h2>
         <motion.p
           className="text-lg text-center text-neutral-subtext max-w-3xl mx-auto mb-16"
           variants={itemVariants}
         >
-          Configurez précisément les caractéristiques de votre dataset synthétique. Obtenez la diversité dont vous avez besoin, 
-          de manière reproductible et explicable.
+          {t('variations.description')}
         </motion.p>
 
         <motion.div

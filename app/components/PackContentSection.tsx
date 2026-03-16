@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
@@ -8,25 +9,13 @@ import { Card } from './common/Card';
 /**
  * Section Contenu du pack
  * Détail des images, résolutions, formats et métadonnées
+ * Support multilingue avec next-intl
  */
 export const PackContentSection: React.FC = () => {
-  const specs = [
-    { label: 'Images synthétiques', value: '10 000+', icon: '🖼️' },
-    { label: 'Résolution standard', value: '1024×1024 px', icon: '📐' },
-    { label: 'Formats', value: 'PNG, JPEG', icon: '📦' },
-    { label: 'Métadonnées', value: 'JSON/CSV', icon: '📋' },
-  ];
-
-  const annotations = [
-    '✓ Pose tête (yaw, pitch, roll)',
-    '✓ Direction du regard (gaze angle)',
-    '✓ Identité synthétique unique',
-    '✓ Type d\'éclairage appliqué',
-    '✓ Expression faciale',
-    '✓ Segmentation visage/arrière-plan',
-    '✓ Seed de génération (reproductibilité)',
-    '✓ Landmarks 2D/3D',
-  ];
+  const t = useTranslations();
+  
+  const specs = t.raw('packContent.specs');
+  const annotations = t.raw('packContent.annotations');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,13 +39,13 @@ export const PackContentSection: React.FC = () => {
         variants={containerVariants}
       >
         <motion.h2 className="text-h2 text-center mb-4" variants={itemVariants}>
-          Ce que vous obtenez
+          {t('packContent.title')}
         </motion.h2>
         <motion.p
           className="text-lg text-center text-neutral-subtext max-w-2xl mx-auto mb-16"
           variants={itemVariants}
         >
-          Un dataset complet et prêt à l'emploi, avec annotations riches pour l'entraînement de vos modèles
+          {t('packContent.description')}
         </motion.p>
 
         {/* Specs principales */}
@@ -78,7 +67,7 @@ export const PackContentSection: React.FC = () => {
         {/* Annotations détaillées */}
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12" variants={containerVariants}>
           <motion.div variants={itemVariants}>
-            <h3 className="text-h3 mb-6 text-neutral-text">Annotations incluses</h3>
+            <h3 className="text-h3 mb-6 text-neutral-text">{t('packContent.annotationsTitle')}</h3>
             <div className="space-y-4">
               {annotations.map((annotation, idx) => (
                 <motion.div
