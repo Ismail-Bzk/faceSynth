@@ -1,43 +1,18 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 /**
  * Composant Footer
+ * Support multilingue avec next-intl
  */
 export const Footer: React.FC = () => {
+  const t = useTranslations();
   const currentYear = new Date().getFullYear();
 
-  const sections = [
-    {
-      title: 'Produit',
-      links: [
-        { label: 'Caractéristiques', href: '#' },
-        { label: 'Pricing', href: '#pricing' },
-        { label: 'Documentation', href: '#' },
-        { label: 'FAQ', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { label: 'Nous contacter', href: '#contact' },
-        { label: 'Email support', href: 'mailto:support@facesynth.io' },
-        { label: 'Status page', href: '#' },
-        { label: 'Changelog', href: '#' },
-      ],
-    },
-    {
-      title: 'Légal',
-      links: [
-        { label: 'Mentions légales', href: '#' },
-        { label: 'Politique de confidentialité', href: '#' },
-        { label: 'Conditions d\'utilisation', href: '#' },
-        { label: 'RGPD', href: '#' },
-      ],
-    },
-  ];
+  const sections = t.raw('footer.sections');
 
   const containerVariants = {
     hidden: { opacity: 0 },
