@@ -1,59 +1,59 @@
 # FaceSynth Landing Page
 
-Landing page moderna e interattiva per **FaceSynth – RGPD Synthetic Face Pack**.
+Modern and interactive landing page for **FaceSynth – RGPD Synthetic Face Pack**.
 
-## 📋 Descrizione
+## 📋 Description
 
-Un sito web moderno costruito con **Next.js 14**, **TypeScript**, **Tailwind CSS** e **framer-motion**. Presenta il prodotto FaceSynth (dataset di volti sintetici 100% RGPD) a team di computer vision, AI, e R&D.
+A modern website built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **framer-motion**. Presents the FaceSynth product (100% RGPD-compliant synthetic face dataset) to computer vision, AI, and R&D teams.
 
-## 🎯 Funzionalità
+## 🎯 Features
 
-- ✨ **Hero Section** con visuale interattiva di volti sintetici
-- 📊 **Sections strutturate**: Problema/Soluzione, Benefici, Contenuto Pack, Variazioni, Casi d'uso, Pricing, Compliance, FAQ
-- 🎨 **Design moderno**: Palette blu/indigo, design responsive mobile-first
-- 🎬 **Animazioni smooth**: Fade-in e slide-up al scroll con framer-motion
-- 📝 **Form capture leads**: Modal con validazione email
-- ♿ **Accessibilità**: HTML semantico, buona gerarchia visiva
-- 📱 **Responsive**: Ottimizzato per mobile, tablet, desktop
+- ✨ **Hero Section** with interactive synthetic face visualization grid
+- 📊 **Structured Sections**: Problem/Solution, Benefits, Package Content, Variations, Use Cases, Pricing, Compliance, FAQ
+- 🎨 **Modern Design**: Blue/indigo color palette, mobile-first responsive design
+- 🎬 **Smooth Animations**: Fade-in and slide-up on scroll with framer-motion
+- 📝 **Lead Capture Form**: Modal with email validation
+- ♿ **Accessibility**: Semantic HTML, good visual hierarchy
+- 📱 **Responsive**: Optimized for mobile, tablet, desktop
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
-- **Linguaggio**: TypeScript.
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Animazioni**: framer-motion
+- **Animations**: framer-motion
 - **Utilities**: clsx
 
-## 📦 Installazione
+## 📦 Installation
 
 ```bash
-# Clonare il repository
+# Clone the repository
 git clone <repo-url>
 cd faceSynth-website
 
-# Installare dipendenze
+# Install dependencies
 npm install
 
-# Avviare dev server
+# Start dev server
 npm run dev
 
-# Build per produzione
+# Build for production
 npm run build
 npm start
 ```
 
-Il sito sarà disponibile a `http://localhost:3000`.
+The site will be available at `http://localhost:3000`.
 
-## 📁 Struttura del Progetto
+## 📁 Project Structure
 
 ```
 faceSynth-website/
 ├── app/
 │   ├── components/
 │   │   ├── common/
-│   │   │   ├── Button.tsx           # Button component riutilizzabile
+│   │   │   ├── Button.tsx           # Reusable button component
 │   │   │   ├── Card.tsx             # Card component
-│   │   │   └── SectionWrapper.tsx   # Wrapper con animazioni
+│   │   │   └── SectionWrapper.tsx   # Wrapper with animations
 │   │   ├── HeroSection.tsx
 │   │   ├── ProblemSolutionSection.tsx
 │   │   ├── BenefitsSection.tsx
@@ -65,10 +65,16 @@ faceSynth-website/
 │   │   ├── FAQSection.tsx
 │   │   ├── LeadCaptureForm.tsx      # Modal form
 │   │   └── Footer.tsx
-│   ├── layout.tsx                  # Root layout
-│   ├── globals.css                 # Stili globali
-│   └── page.tsx                    # Homepage
-├── public/                         # Assets statici
+│   ├── hooks/
+│   │   └── useScrollAnimation.ts    # Custom scroll animation hook
+│   ├── types/
+│   │   └── index.ts                 # TypeScript interfaces
+│   ├── constants/
+│   │   └── site.ts                  # Site configuration and content
+│   ├── layout.tsx                   # Root layout
+│   ├── globals.css                  # Global styles
+│   └── page.tsx                     # Homepage
+├── public/                          # Static assets
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.ts
@@ -76,36 +82,43 @@ faceSynth-website/
 └── next.config.js
 ```
 
-## 🎨 Design & Colori
+## 🎨 Design & Colors
 
-- **Sfondo principale**: Bianco/grigio molto chiaro (`#f9fafb`)
-- **Accenti primari**: Blu (`#2563eb`)
-- **Accenti secondari**: Blu-violetto (`#6366f1`)
-- **Testo**: Grigio scuro (`#1f2937`)
-- **Testo secondario**: Grigio medio (`#6b7280`)
+- **Main Background**: White/very light gray (`#f9fafb`)
+- **Primary Accents**: Blue (`#2563eb`)
+- **Secondary Accents**: Blue-violet (`#6366f1`)
+- **Text**: Dark gray (`#1f2937`)
+- **Secondary Text**: Medium gray (`#6b7280`)
 
-## 🔧 Configurazione
+## 🔧 Configuration
 
 ### Tailwind CSS
-Personalizzare i colori e le varianti in `tailwind.config.ts`.
+Customize colors and variants in `tailwind.config.ts`.
 
 ### Framer Motion
-Le animazioni sono integrate nei componenti di sezione tramite `<motion.*>`. Modifica `initial`, `animate`, `transition` per personalizzare.
+Animations are integrated in section components via `<motion.*>`. Modify `initial`, `animate`, `transition` to customize.
 
-## 📝 Contenuto
+### Content
+All content is centralized in `app/constants/site.ts` for easy updates. The landing page is currently in **French**.
 
-Tutto il contenuto è in **francese**. Per tradurre:
+To translate:
 
-1. Creare una struttura i18n (es. con `next-intl`)
-2. Estrarre stringhe in file JSON
-3. Integrare la libreria di traduzione
+1. Create an i18n structure (e.g., with `next-intl`)
+2. Extract strings into JSON files
+3. Integrate the translation library
 
 ## 🚀 Deployment
 
-### Vercel (consigliato)
+### Vercel (Recommended)
 ```bash
 vercel deploy
 ```
+
+Or use the Vercel Dashboard:
+1. Go to https://vercel.com/new
+2. Connect your GitHub repository
+3. Select this project
+4. Click "Deploy"
 
 ### Docker
 ```bash
@@ -113,43 +126,67 @@ docker build -t facesynth-landing .
 docker run -p 3000:3000 facesynth-landing
 ```
 
-### Altre piattaforme
-Compatible con Netlify, AWS Amplify, etc. Segui le loro guide di deployment Next.js.
+### Other Platforms
+Compatible with Netlify, AWS Amplify, etc. Follow their Next.js deployment guides.
 
-## 🔐 Variabili d'ambiente
+## 🔐 Environment Variables
 
-Creare un file `.env.local`:
+Create a `.env.local` file:
 ```
 NEXT_PUBLIC_API_URL=https://api.facesynth.io
+NEXT_PUBLIC_CONTACT_EMAIL=contact@facesynth.io
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ```
+
+See `.env.example` for all available variables.
 
 ## 📊 Performance
 
 - Lighthouse score target: >90 (Performance, Accessibility, Best Practices, SEO)
-- Immagini ottimizzate con `next/image`
-- Code splitting automatico con Next.js
-- CSS-in-JS minimized
+- Images optimized with `next/image`
+- Automatic code splitting with Next.js
+- Minimized CSS-in-JS
 
-## 🤝 Contribuzioni
+## 🎯 Scripts
 
-Per contribuire:
-1. Fork il repo
-2. Crea un branch: `git checkout -b feature/my-feature`
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm start` | Start production server |
+| `npm run lint` | Run ESLint and TypeScript checks |
+
+## 📚 Documentation
+
+- **[QUICKSTART.md](./QUICKSTART.md)** - Quick setup guide (5 minutes)
+- **[DEVELOPMENT.md](./DEVELOPMENT.md)** - Development and customization guide
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Detailed architecture overview
+- **[LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)** - Pre-launch checklist
+- **[INDEX.md](./INDEX.md)** - Navigation guide for all documentation
+
+## 🤝 Contributing
+
+To contribute:
+1. Fork the repo
+2. Create a branch: `git checkout -b feature/my-feature`
 3. Commit: `git commit -m 'Add feature'`
 4. Push: `git push origin feature/my-feature`
-5. Apri una Pull Request
+5. Open a Pull Request
 
 ## 📄 License
 
-MIT License – Vedi il file `LICENSE`.
+MIT License – See the `LICENSE` file.
 
 ## 📧 Support
 
-Per domande o feedback:
+For questions or feedback:
 - Email: contact@facesynth.io
 - LinkedIn: [FaceSynth](https://linkedin.com)
 - Twitter: [@FaceSynth](https://twitter.com)
+- GitHub Issues: [Report a bug](https://github.com/Ismail-Bzk/Synthetic_Face_Generator/issues)
 
 ---
 
 **Made with ❤️ for the AI/CV community.**
+
+**Status**: ✅ Production Ready | **Version**: 1.0.0 | **Last Updated**: March 16, 2026
