@@ -2,14 +2,17 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { Button } from './common/Button';
 import { LeadCaptureForm } from './LeadCaptureForm';
 
 /**
  * Section Hero - Présentation principale du produit FaceSynth
  * Inclut un titre accrocheur, sous-titre, CTA principaux et visuel hero
+ * Support multilingue avec next-intl
  */
 export const HeroSection: React.FC = () => {
+  const t = useTranslations();
   const [showForm, setShowForm] = useState(false);
 
   const containerVariants = {
