@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import clsx from 'clsx';
 
@@ -14,14 +15,17 @@ const LANGUAGES = [
 export function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Extract current locale from pathname
-  const currentLocale = pathname.split('/')[1] || 'fr';
-  const currentLanguage = LANGUAGES.find(lang => lang.code === currentLocale);
+  const currentLanguage = LANGUAGES.find(lang => lang.code === locale);
 
-  const handleLanguageChange = (locale: string) => {
-    const newPathname = pathname.replace(`/${currentLocale}`, `/${locale}`);
+  const handleLanguageChange = (newLocale: string) => {
+    // Replace the locale in the pathname
+    const segments = pathname.split('/');
+    segments[1] = newLocale; // Replace locale segment
+    const newPathname = segments.join('/');
+    
     router.push(newPathname);
     setIsOpen(false);
   };
@@ -70,7 +74,7 @@ export function LanguageSwitcher() {
                 'w-full text-left px-4 py-3 text-sm font-medium',
                 'first:rounded-t-lg last:rounded-b-lg',
                 'transition-colors duration-150',
-                currentLocale === lang.code
+                locale === lang.code
                   ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
                   : 'text-gray-700 hover:bg-gray-50',
               )}
