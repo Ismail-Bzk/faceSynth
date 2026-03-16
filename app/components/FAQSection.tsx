@@ -18,8 +18,6 @@ export const FAQSection: React.FC = () => {
   const t = useTranslations();
   
   const faqs: FAQItem[] = t.raw('faq.items') as FAQItem[];
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   const [expanded, setExpanded] = useState<number | null>(0);
 
   const containerVariants = {

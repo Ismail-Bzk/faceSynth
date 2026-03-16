@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Button } from './common/Button';
 
@@ -15,7 +14,6 @@ interface LeadCaptureFormProps {
  * Support multilingue avec next-intl
  */
 export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => {
-  const t = useTranslations();
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
