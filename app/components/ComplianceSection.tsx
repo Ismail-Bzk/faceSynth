@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
@@ -8,30 +9,12 @@ import { Card } from './common/Card';
 /**
  * Section RGPD, Éthique & Garantie
  * Rassurez fortement sur les aspects de conformité
+ * Support multilingue avec next-intl
  */
 export const ComplianceSection: React.FC = () => {
-  const guarantees = [
-    {
-      title: 'Aucune donnée personnelle réelle',
-      description: 'Les visages sont 100% synthétiques. Pas de scraping, pas de personnes réelles.',
-      icon: '✨',
-    },
-    {
-      title: 'Conforme RGPD par nature',
-      description: 'Sans données personnelles, pas de consentement requis, pas d\'obligations d\'opt-out.',
-      icon: '⚖️',
-    },
-    {
-      title: 'Génération procédurale transparente',
-      description: 'Créé avec Blender. Seed unique pour chaque visage. Reproductibilité totale.',
-      icon: '🔧',
-    },
-    {
-      title: 'Explicabilité et audit',
-      description: 'Documentations RGPD/éthique incluses. Transparence complète sur la génération.',
-      icon: '📋',
-    },
-  ];
+  const t = useTranslations();
+  
+  const guarantees = t.raw('compliance.guarantees');
 
   const containerVariants = {
     hidden: { opacity: 0 },

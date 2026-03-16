@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
@@ -8,60 +9,12 @@ import { Button } from './common/Button';
 
 /**
  * Section Pricing et licences
+ * Support multilingue avec next-intl
  */
 export const PricingSection: React.FC = () => {
-  const plans = [
-    {
-      name: 'Starter',
-      description: 'Idéal pour débuter et tester',
-      price: '1 500 – 3 000 €',
-      images: '10 000 images',
-      features: [
-        '10 000 visages synthétiques',
-        'Résolution 1024×1024',
-        'Annotations complètes',
-        'Format PNG/JPEG',
-        'Documentation',
-        'Licence non-commerciale ou académique',
-      ],
-      cta: 'Commencer',
-      highlighted: false,
-    },
-    {
-      name: 'Pro',
-      description: 'Pour les projets en production',
-      price: '5 000 – 12 000 €',
-      images: '50k – 200k images',
-      features: [
-        '50 000 à 200 000 visages',
-        'Résolutions multiples',
-        'Annotations riches complètes',
-        'Métadonnées JSON/CSV',
-        'Support email prioritaire',
-        'Licence commerciale',
-        'Variations personnalisées',
-      ],
-      cta: 'Obtenir un devis',
-      highlighted: true,
-    },
-    {
-      name: 'Enterprise',
-      description: 'Solutions sur mesure',
-      price: 'Devis personnalisé',
-      images: 'Configurations illimitées',
-      features: [
-        'Datasets custom de toute taille',
-        'Variations spécifiques à votre domaine',
-        'Résolutions et formats adaptés',
-        'Support dédié',
-        'Garanties SLA',
-        'Options de déploiement privé',
-        'Contrats de licences négociables',
-      ],
-      cta: 'Parler à un expert',
-      highlighted: false,
-    },
-  ];
+  const t = useTranslations();
+  
+  const plans = t.raw('pricing.plans');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,13 +38,13 @@ export const PricingSection: React.FC = () => {
         variants={containerVariants}
       >
         <motion.h2 className="text-h2 text-center mb-4" variants={itemVariants}>
-          Prix et licences
+          {t('pricing.title')}
         </motion.h2>
         <motion.p
           className="text-lg text-center text-neutral-subtext max-w-2xl mx-auto mb-16"
           variants={itemVariants}
         >
-          Tarification flexible adaptée à vos besoins. Les prix ci-dessous sont des ordres de grandeur.
+          {t('pricing.description')}
         </motion.p>
 
         <motion.div
