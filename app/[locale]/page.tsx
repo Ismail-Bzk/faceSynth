@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Header } from '../components/Header';
 import { HeroSection } from '../components/HeroSection';
@@ -17,6 +15,9 @@ import { Footer } from '../components/Footer';
  * Page d'accueil principale de FaceSynth
  * Agrège toutes les sections dans un flow cohérent et attrayant
  * Support multilingue avec next-intl
+ * 
+ * NOTE: Server Component (not 'use client') pour permettre le pre-rendering
+ * Les sections enfants sont des Client Components ('use client')
  */
 export default function Home() {
   return (
