@@ -24,15 +24,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="fr">
-      <head>
-        <meta name="theme-color" content="#2563eb" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className="antialiased">
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }
