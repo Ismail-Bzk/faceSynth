@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Header } from '../components/Header';
 import { HeroSection } from '../components/HeroSection';
 import { ProblemSolutionSection } from '../components/ProblemSolutionSection';
 import { BenefitsSection } from '../components/BenefitsSection';
@@ -19,9 +20,13 @@ import { Footer } from '../components/Footer';
  */
 export default function Home() {
   return (
-    <main className="bg-neutral-bg">
-      {/* Hero Section - Impact immédiat */}
-      <HeroSection />
+    <>
+      {/* Header with Language Switcher */}
+      <Header />
+      
+      <main className="bg-neutral-bg pt-16">
+        {/* Hero Section - Impact immédiat */}
+        <HeroSection />
 
       {/* Problem / Solution - Contextualization */}
       <ProblemSolutionSection />
@@ -49,6 +54,7 @@ export default function Home() {
 
       {/* Footer - Navigation générale */}
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }
