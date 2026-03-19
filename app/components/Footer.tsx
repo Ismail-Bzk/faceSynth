@@ -1,40 +1,38 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 /**
  * Composant Footer
+ * Support multilingue avec next-intl
  */
+
 export const Footer: React.FC = () => {
+  const t = useTranslations();
   const currentYear = new Date().getFullYear();
 
   const sections = [
     {
-      title: 'Produit',
+      title: t('footer.product'),
       links: [
-        { label: 'Caractéristiques', href: '#' },
-        { label: 'Pricing', href: '#pricing' },
-        { label: 'Documentation', href: '#' },
-        { label: 'FAQ', href: '#' },
+        { label: t('footer.features'), href: '#features' },
+        { label: t('footer.pricing'), href: '#pricing' },
       ],
     },
     {
-      title: 'Support',
+      title: t('footer.support'),
       links: [
-        { label: 'Nous contacter', href: '#contact' },
-        { label: 'Email support', href: 'mailto:support@facesynth.io' },
-        { label: 'Status page', href: '#' },
-        { label: 'Changelog', href: '#' },
+        { label: t('footer.documentation'), href: '#pricing' },
+        { label: t('footer.contact'), href: '#contact' },
       ],
     },
     {
-      title: 'Légal',
+      title: t('footer.legal'),
       links: [
-        { label: 'Mentions légales', href: '#' },
-        { label: 'Politique de confidentialité', href: '#' },
-        { label: 'Conditions d\'utilisation', href: '#' },
-        { label: 'RGPD', href: '#' },
+        { label: t('footer.privacy'), href: '#privacy' },
+        { label: t('footer.terms'), href: '#terms' },
       ],
     },
   ];
@@ -67,7 +65,7 @@ export const Footer: React.FC = () => {
             <motion.div variants={itemVariants}>
               <h3 className="text-2xl font-bold mb-3">FaceSynth</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Dataset de visages synthétiques 100% RGPD pour l'IA et la computer vision.
+                {t('footer.tagline')}
               </p>
               <div className="flex gap-4">
                 <a
@@ -129,10 +127,10 @@ export const Footer: React.FC = () => {
             variants={itemVariants}
           >
             <p>
-              © {currentYear} FaceSynth. All rights reserved. – Synthétique et fier de l'être.
+              {t('footer.copyright').replace('2026', String(currentYear))}
             </p>
             <p>
-              Fabriqué avec ❤️ pour la communauté AI/CV.
+              {t('footer.madeWith')}
             </p>
           </motion.div>
         </motion.div>

@@ -1,6 +1,7 @@
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import clsx from 'clsx';
 
@@ -14,15 +15,25 @@ const LANGUAGES = [
 export function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
+  const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Extract current locale from pathname
-  const currentLocale = pathname.split('/')[1] || 'fr';
-  const currentLanguage = LANGUAGES.find(lang => lang.code === currentLocale);
+  const currentLanguage = LANGUAGES.find(lang => lang.code === locale);
 
-  const handleLanguageChange = (locale: string) => {
-    const newPathname = pathname.replace(`/${currentLocale}`, `/${locale}`);
-    router.push(newPathname);
+  const handleLanguageChange = (newLocale: string) => {
+    if (newLocale === locale) {
+      setIsOpen(false);
+      return;
+    }
+
+    const segments = pathname.split('/');
+    segments[1] = newLocale;
+    const newPathname = segments.join('/');
+    const query = typeof window !== 'undefined' ? window.location.search : '';
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    const href = `${newPathname}${query}${hash}`;
+
+    router.replace(href);
     setIsOpen(false);
   };
 
@@ -31,6 +42,8 @@ export function LanguageSwitcher() {
       {/* Dropdown button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
         className={clsx(
           'flex items-center gap-2 px-3 py-2 rounded-lg',
           'bg-white border border-gray-200 hover:border-blue-300',
@@ -61,16 +74,18 @@ export function LanguageSwitcher() {
           'border border-gray-200 shadow-lg z-50',
           'animate-in fade-in slide-in-from-top-2',
           'ltr:origin-top-right rtl:origin-top-left'
-        )}>
+        )} role="listbox">
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
+              role="option"
+              aria-selected={locale === lang.code}
               className={clsx(
                 'w-full text-left px-4 py-3 text-sm font-medium',
                 'first:rounded-t-lg last:rounded-b-lg',
                 'transition-colors duration-150',
-                currentLocale === lang.code
+                locale === lang.code
                   ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600'
                   : 'text-gray-700 hover:bg-gray-50',
               )}

@@ -15,7 +15,8 @@
     "subtitle": "100% RGPD-compliant dataset to train your computer vision models",
     "cta1": "Get Sample Pack",
     "cta2": "Request Demo",
-    "trustBadge": "Trusted by AI teams worldwide"
+    "trustBadge": "Trusted by AI teams worldwide",
+    "overlay": "100% synthetic faces with annotations"
   },
   "features": [
     {
@@ -33,6 +34,7 @@
   ],
   "problemSolution": {
     "title": "Why FaceSynth?",
+    "solutionTitle": "The solution: FaceSynth",
     "problems": [
       {
         "title": "Limited real data",
@@ -64,6 +66,7 @@
   },
   "benefits": {
     "title": "FaceSynth Benefits",
+    "description": "Why FaceSynth is the right choice for computer vision teams that need speed, control and compliance.",
     "items": [
       {
         "title": "✅ RGPD Compliant",
@@ -123,7 +126,13 @@
       "Ethnicity",
       "Accessories (glasses, hat, etc.)"
     ],
-    "delivery": "Delivery Format"
+    "delivery": "Delivery Format",
+    "deliveryAccessTitle": "Access & download",
+    "deliveryAccessDescription": "Secure download link with authentication. Unlimited storage for 30 days.",
+    "deliveryDocumentationTitle": "Documentation",
+    "deliveryDocumentationDescription": "Complete PDF plus RGPD, ethics and legal technical sheets.",
+    "deliverySupportTitle": "Support",
+    "deliverySupportDescription": "Support email included for any integration question."
   },
   "variations": {
     "title": "Control Every Aspect",
@@ -138,10 +147,13 @@
       "Occlusions",
       "Lighting"
     ],
-    "confidence": "With confidence scores for each attribute"
+    "confidence": "With confidence scores for each attribute",
+    "transparencyTitle": "Transparency & Reproducibility",
+    "transparencyDescription": "Every face is generated procedurally with a unique seed. You can reproduce or adapt the dataset exactly as needed with full traceability."
   },
   "useCases": {
     "title": "Use Cases",
+    "description": "Concrete scenarios where synthetic faces accelerate ML pipelines without legal debt.",
     "items": [
       {
         "title": "Face Detection",
@@ -171,6 +183,11 @@
   },
   "pricing": {
     "title": "Simple & Transparent Pricing",
+    "description": "Pick a volume that matches your project stage, with a clear license and predictable scope.",
+    "defaultCta": "Talk to the team",
+    "popularBadge": "Most popular",
+    "guaranteeTitle": "FaceSynth guarantee:",
+    "guaranteeText": "No real people, no scraping, transparent procedural generation. RGPD certificate and legal documents included.",
     "plans": [
       {
         "name": "Starter",
@@ -215,6 +232,7 @@
   },
   "compliance": {
     "title": "Compliance & Guarantees",
+    "description": "FaceSynth is built for teams that care about compliance and data ethics.",
     "guarantees": [
       {
         "title": "✅ 100% RGPD",
@@ -242,10 +260,12 @@
       "Documentation provided: ✅",
       "DPO support: ✅"
     ],
-    "contact": "Contact our DPO"
+    "contact": "Questions about compliance?",
+    "contactDescription": "Our team can walk you through RGPD and ethical considerations in detail."
   },
   "faq": {
     "title": "Frequently Asked Questions",
+    "description": "Find clear answers to the most common questions about FaceSynth.",
     "items": [
       {
         "question": "How can I verify it's truly synthetic?",
@@ -292,6 +312,7 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "terms": "Terms",
-    "copyright": "© 2026 FaceSynth. All rights reserved."
+    "copyright": "© 2026 FaceSynth. All rights reserved.",
+    "madeWith": "Built for the AI/CV community."
   }
 }

@@ -1,32 +1,56 @@
 'use client';
 
 import React from 'react';
+import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from './common/SectionWrapper';
 import { Card } from './common/Card';
+import frMessages from '../i18n/fr.json';
+import enMessages from '../i18n/en.json';
+import esMessages from '../i18n/es.json';
+import arMessages from '../i18n/ar.json';
 
 /**
  * Section Contenu du pack
  * Détail des images, résolutions, formats et métadonnées
+ * Support multilingue avec next-intl
  */
-export const PackContentSection: React.FC = () => {
-  const specs = [
-    { label: 'Images synthétiques', value: '10 000+', icon: '🖼️' },
-    { label: 'Résolution standard', value: '1024×1024 px', icon: '📐' },
-    { label: 'Formats', value: 'PNG, JPEG', icon: '📦' },
-    { label: 'Métadonnées', value: 'JSON/CSV', icon: '📋' },
-  ];
 
-  const annotations = [
-    '✓ Pose tête (yaw, pitch, roll)',
-    '✓ Direction du regard (gaze angle)',
-    '✓ Identité synthétique unique',
-    '✓ Type d\'éclairage appliqué',
-    '✓ Expression faciale',
-    '✓ Segmentation visage/arrière-plan',
-    '✓ Seed de génération (reproductibilité)',
-    '✓ Landmarks 2D/3D',
-  ];
+interface Spec {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface PackContentMessages {
+  title: string;
+  subtitle: string;
+  specs: Spec[];
+  annotations: string;
+  annotationsList: string[];
+  delivery: string;
+  deliveryAccessTitle: string;
+  deliveryAccessDescription: string;
+  deliveryDocumentationTitle: string;
+  deliveryDocumentationDescription: string;
+  deliverySupportTitle: string;
+  deliverySupportDescription: string;
+}
+
+const packContentByLocale: Record<string, PackContentMessages> = {
+  fr: frMessages.packageContent as PackContentMessages,
+  en: enMessages.packageContent as PackContentMessages,
+  es: esMessages.packageContent as PackContentMessages,
+  ar: arMessages.packageContent as PackContentMessages,
+};
+
+export const PackContentSection: React.FC = () => {
+  const locale = useLocale();
+  const packContent = packContentByLocale[locale] ?? packContentByLocale.fr;
+  const specs = Array.isArray(packContent.specs) ? packContent.specs : [];
+  const annotations = Array.isArray(packContent.annotationsList)
+    ? packContent.annotationsList
+    : [];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,13 +74,13 @@ export const PackContentSection: React.FC = () => {
         variants={containerVariants}
       >
         <motion.h2 className="text-h2 text-center mb-4" variants={itemVariants}>
-          Ce que vous obtenez
+          {packContent.title}
         </motion.h2>
         <motion.p
           className="text-lg text-center text-neutral-subtext max-w-2xl mx-auto mb-16"
           variants={itemVariants}
         >
-          Un dataset complet et prêt à l'emploi, avec annotations riches pour l'entraînement de vos modèles
+          {packContent.subtitle}
         </motion.p>
 
         {/* Specs principales */}
@@ -67,9 +91,9 @@ export const PackContentSection: React.FC = () => {
           {specs.map((spec, idx) => (
             <motion.div key={idx} variants={itemVariants}>
               <Card className="text-center">
-                <div className="text-4xl mb-3">{spec.icon}</div>
-                <p className="text-small text-neutral-subtext mb-2">{spec.label}</p>
-                <p className="text-h3 font-bold text-primary-blue">{spec.value}</p>
+                {spec.icon ? <div className="text-4xl mb-3">{spec.icon}</div> : null}
+                <p className="text-h3 font-bold text-primary-blue mb-2">{spec.title}</p>
+                <p className="text-small text-neutral-subtext">{spec.description}</p>
               </Card>
             </motion.div>
           ))}
@@ -78,7 +102,7 @@ export const PackContentSection: React.FC = () => {
         {/* Annotations détaillées */}
         <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12" variants={containerVariants}>
           <motion.div variants={itemVariants}>
-            <h3 className="text-h3 mb-6 text-neutral-text">Annotations incluses</h3>
+            <h3 className="text-h3 mb-6 text-neutral-text">{packContent.annotations}</h3>
             <div className="space-y-4">
               {annotations.map((annotation, idx) => (
                 <motion.div
@@ -95,24 +119,24 @@ export const PackContentSection: React.FC = () => {
 
           {/* Info format livraison */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-h3 mb-6 text-neutral-text">Format de livraison</h3>
+            <h3 className="text-h3 mb-6 text-neutral-text">{packContent.delivery}</h3>
             <Card className="space-y-4">
               <div>
-                <h4 className="font-semibold text-neutral-text mb-2">Accès et téléchargement</h4>
+                <h4 className="font-semibold text-neutral-text mb-2">{packContent.deliveryAccessTitle}</h4>
                 <p className="text-neutral-subtext">
-                  Lien de téléchargement sécurisé avec authentification. Stockage illimité pendant 30 jours.
+                  {packContent.deliveryAccessDescription}
                 </p>
               </div>
               <div className="border-t border-neutral-border pt-4">
-                <h4 className="font-semibold text-neutral-text mb-2">Documentation</h4>
+                <h4 className="font-semibold text-neutral-text mb-2">{packContent.deliveryDocumentationTitle}</h4>
                 <p className="text-neutral-subtext">
-                  PDF complet + fiches techniques RGPD, éthique et légales.
+                  {packContent.deliveryDocumentationDescription}
                 </p>
               </div>
               <div className="border-t border-neutral-border pt-4">
-                <h4 className="font-semibold text-neutral-text mb-2">Support</h4>
+                <h4 className="font-semibold text-neutral-text mb-2">{packContent.deliverySupportTitle}</h4>
                 <p className="text-neutral-subtext">
-                  Email de support inclus pour toute question d'intégration.
+                  {packContent.deliverySupportDescription}
                 </p>
               </div>
             </Card>

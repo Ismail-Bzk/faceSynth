@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Header } from '../components/Header';
 import { HeroSection } from '../components/HeroSection';
@@ -12,12 +10,21 @@ import { PricingSection } from '../components/PricingSection';
 import { ComplianceSection } from '../components/ComplianceSection';
 import { FAQSection } from '../components/FAQSection';
 import { Footer } from '../components/Footer';
+import { routing } from '@/i18n/routing';
 
 /**
  * Page d'accueil principale de FaceSynth
  * Agrège toutes les sections dans un flow cohérent et attrayant
  * Support multilingue avec next-intl
+ * 
+ * NOTE: Server Component (not 'use client') pour permettre le pre-rendering
+ * Les sections enfants sont des Client Components ('use client')
  */
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export default function Home() {
   return (
     <>

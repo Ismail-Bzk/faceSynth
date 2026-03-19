@@ -15,7 +15,8 @@
     "subtitle": "Dataset 100% conforme RGPD pour entraîner vos modèles de vision par ordinateur",
     "cta1": "Obtenir un sample pack",
     "cta2": "Demander une démo",
-    "trustBadge": "Trusted by AI teams worldwide"
+    "trustBadge": "Trusted by AI teams worldwide",
+    "overlay": "Visages 100% synthétiques avec annotations"
   },
   "features": [
     {
@@ -33,6 +34,7 @@
   ],
   "problemSolution": {
     "title": "Pourquoi FaceSynth?",
+    "solutionTitle": "La solution : FaceSynth",
     "problems": [
       {
         "title": "Données réelles limitées",
@@ -64,6 +66,7 @@
   },
   "benefits": {
     "title": "Avantages FaceSynth",
+    "description": "Pourquoi FaceSynth est le meilleur choix pour vos équipes computer vision",
     "items": [
       {
         "title": "✅ RGPD Compliant",
@@ -123,7 +126,13 @@
       "Ethnie",
       "Accessoires (lunettes, chapeau, etc.)"
     ],
-    "delivery": "Format de Livraison"
+    "delivery": "Format de Livraison",
+    "deliveryAccessTitle": "Accès et téléchargement",
+    "deliveryAccessDescription": "Lien de téléchargement sécurisé avec authentification. Stockage illimité pendant 30 jours.",
+    "deliveryDocumentationTitle": "Documentation",
+    "deliveryDocumentationDescription": "PDF complet + fiches techniques RGPD, éthique et légales.",
+    "deliverySupportTitle": "Support",
+    "deliverySupportDescription": "Email de support inclus pour toute question d'intégration."
   },
   "variations": {
     "title": "Contrôlez Chaque Aspect",
@@ -138,10 +147,13 @@
       "Occlusions",
       "Lighting"
     ],
-    "confidence": "Avec scores de confiance pour chaque attribut"
+    "confidence": "Avec scores de confiance pour chaque attribut",
+    "transparencyTitle": "Transparence & Reproductibilité",
+    "transparencyDescription": "Chaque visage est généré procéduralement via une seed unique. Vous pouvez reproduire ou adapter le dataset exactement comme vous le souhaitez, sans surprise, avec une traçabilité complète."
   },
   "useCases": {
     "title": "Cas d'Usage",
+    "description": "Exemples concrets de cas où des visages synthétiques accélèrent vos pipelines ML sans dette légale.",
     "items": [
       {
         "title": "Détection Faciale",
@@ -171,6 +183,11 @@
   },
   "pricing": {
     "title": "Tarification Simple et Transparente",
+    "description": "Choisissez un volume adapté à votre phase projet, avec une licence claire et un périmètre maîtrisé.",
+    "defaultCta": "Parler à l'équipe",
+    "popularBadge": "Plus populaire",
+    "guaranteeTitle": "Garantie FaceSynth :",
+    "guaranteeText": "Pas de personnes réelles, pas de scraping, génération procédurale transparente. Certificat RGPD et documents légaux inclus.",
     "plans": [
       {
         "name": "Starter",
@@ -215,6 +232,7 @@
   },
   "compliance": {
     "title": "Conformité & Garanties",
+    "description": "FaceSynth est conçu pour les équipes sensibles à la conformité et l'éthique des données.",
     "guarantees": [
       {
         "title": "✅ 100% RGPD",
@@ -242,10 +260,12 @@
       "Documentation fournie: ✅",
       "Support DPO: ✅"
     ],
-    "contact": "Contacter notre DPO"
+    "contact": "Vous avez des questions de conformité ?",
+    "contactDescription": "Notre équipe est disponible pour discuter en détail des implications RGPD et éthiques."
   },
   "faq": {
     "title": "Questions Fréquemment Posées",
+    "description": "Trouvez réponse à vos questions les plus courantes sur FaceSynth.",
     "items": [
       {
         "question": "Comment vérifier que c'est vraiment synthétique?",
@@ -292,6 +312,7 @@
     "legal": "Juridique",
     "privacy": "Confidentialité",
     "terms": "Conditions",
-    "copyright": "© 2026 FaceSynth. Tous droits réservés."
+    "copyright": "© 2026 FaceSynth. Tous droits réservés.",
+    "madeWith": "Conçu pour la communauté AI/CV."
   }
 }

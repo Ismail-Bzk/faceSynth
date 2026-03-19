@@ -11,6 +11,7 @@ interface LeadCaptureFormProps {
 /**
  * Composant formulaire de capture de leads
  * Apparaît en modal lors du clic sur les CTA principaux
+ * Support multilingue avec next-intl
  */
 export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => {
   const [email, setEmail] = useState('');
