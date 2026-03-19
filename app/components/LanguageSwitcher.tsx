@@ -6,10 +6,10 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 const LANGUAGES = [
-  { code: 'fr', label: '🇫🇷 Français', flag: '🇫🇷' },
-  { code: 'en', label: '🇬🇧 English', flag: '🇬🇧' },
-  { code: 'es', label: '🇪🇸 Español', flag: '🇪🇸' },
-  { code: 'ar', label: '🇸🇦 العربية', flag: '🇸🇦' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
 ];
 
 export function LanguageSwitcher() {
@@ -53,7 +53,7 @@ export function LanguageSwitcher() {
         )}
       >
         <span className="text-lg">{currentLanguage?.flag}</span>
-        <span className="hidden sm:inline">{currentLanguage?.label.split(' ')[1]}</span>
+        <span className="hidden sm:inline">{currentLanguage?.label}</span>
         <svg
           className={clsx(
             'w-4 h-4 transition-transform duration-200',

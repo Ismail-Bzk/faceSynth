@@ -18,6 +18,11 @@
     "trustBadge": "Trusted by AI teams worldwide",
     "overlay": "100% synthetic faces with annotations"
   },
+  "seo": {
+    "title": "FaceSynth - RGPD-Compliant Synthetic Face Pack",
+    "description": "Synthetic face dataset for computer vision teams that need compliant training data, rich annotations and controlled variation.",
+    "keywords": "synthetic faces, computer vision, RGPD, dataset, machine learning, face dataset"
+  },
   "features": [
     {
       "title": "RGPD Compliance",
@@ -314,5 +319,21 @@
     "terms": "Terms",
     "copyright": "© 2026 FaceSynth. All rights reserved.",
     "madeWith": "Built for the AI/CV community."
+  },
+  "leadForm": {
+    "title": "Get a sample pack",
+    "subtitle": "Fill out the form below and we will send you a sample dataset within 24 hours.",
+    "emailLabel": "Work email *",
+    "emailPlaceholder": "you@company.com",
+    "companyLabel": "Company / Organization (optional)",
+    "companyPlaceholder": "Example: Acme AI Labs",
+    "messageLabel": "Use case (optional)",
+    "messagePlaceholder": "Example: Face detection for monitoring, eye-tracking, etc.",
+    "cancel": "Cancel",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "successTitle": "Request received",
+    "successMessage": "We will send a sample pack to {email} within 24 hours.",
+    "close": "Close modal"
   }
 }

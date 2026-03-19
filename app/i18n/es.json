@@ -18,6 +18,11 @@
     "trustBadge": "Confiado por equipos de IA en todo el mundo",
     "overlay": "Rostros 100% sintéticos con anotaciones"
   },
+  "seo": {
+    "title": "FaceSynth - Pack de rostros sintéticos conforme con RGPD",
+    "description": "Dataset de rostros sintéticos para equipos de visión por computadora que necesitan datos conformes, anotados y controlables.",
+    "keywords": "rostros sintéticos, visión por computadora, RGPD, dataset, machine learning, datos sintéticos"
+  },
   "features": [
     {
       "title": "Conformidad con RGPD",
@@ -314,5 +319,21 @@
     "terms": "Términos",
     "copyright": "© 2026 FaceSynth. Todos los derechos reservados.",
     "madeWith": "Creado para la comunidad AI/CV."
+  },
+  "leadForm": {
+    "title": "Obtener un paquete de muestra",
+    "subtitle": "Completa el formulario y te enviaremos un dataset de muestra en 24 horas.",
+    "emailLabel": "Correo profesional *",
+    "emailPlaceholder": "tu@empresa.com",
+    "companyLabel": "Empresa / Organización (opcional)",
+    "companyPlaceholder": "Ej.: Acme AI Labs",
+    "messageLabel": "Caso de uso (opcional)",
+    "messagePlaceholder": "Ej.: Detección facial para vigilancia, eye-tracking, etc.",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "successTitle": "Solicitud recibida",
+    "successMessage": "Te enviaremos un paquete de muestra a {email} en 24 horas.",
+    "close": "Cerrar ventana"
   }
 }

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { Button } from './common/Button';
 
 interface LeadCaptureFormProps {
@@ -14,6 +15,7 @@ interface LeadCaptureFormProps {
  * Support multilingue avec next-intl
  */
 export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => {
+  const t = useTranslations();
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
@@ -60,23 +62,23 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
         {!submitted ? (
           <>
             <h2 className="text-h3 font-bold text-neutral-text mb-2">
-              Obtenir un sample pack
+              {t('leadForm.title')}
             </h2>
             <p className="text-neutral-subtext mb-6">
-              Remplissez le formulaire ci-dessous et nous vous enverrons un dataset de sample dans les 24h.
+              {t('leadForm.subtitle')}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email */}
               <div>
                 <label className="block text-sm font-semibold text-neutral-text mb-2">
-                  Email professionnel *
+                  {t('leadForm.emailLabel')}
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="vous@entreprise.com"
+                  placeholder={t('leadForm.emailPlaceholder')}
                   required
                   className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                 />
@@ -85,13 +87,13 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
               {/* Entreprise / Organisme */}
               <div>
                 <label className="block text-sm font-semibold text-neutral-text mb-2">
-                  Entreprise / Organisme (optionnel)
+                  {t('leadForm.companyLabel')}
                 </label>
                 <input
                   type="text"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  placeholder="Ex: Acme AI Labs"
+                  placeholder={t('leadForm.companyPlaceholder')}
                   className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                 />
               </div>
@@ -99,12 +101,12 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
               {/* Message optionnel */}
               <div>
                 <label className="block text-sm font-semibold text-neutral-text mb-2">
-                  Votre cas d\'usage (optionnel)
+                  {t('leadForm.messageLabel')}
                 </label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Ex: Detection de visages pour surveillance, Eye-tracking, etc."
+                  placeholder={t('leadForm.messagePlaceholder')}
                   rows={3}
                   className="w-full px-4 py-2 border border-neutral-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue resize-none"
                 />
@@ -119,7 +121,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
                   onClick={onClose}
                   disabled={loading}
                 >
-                  Annuler
+                  {t('leadForm.cancel')}
                 </Button>
                 <Button
                   type="submit"
@@ -127,7 +129,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
                   className="flex-1"
                   disabled={!isValidEmail(email) || loading}
                 >
-                  {loading ? 'Envoi...' : 'Envoyer'}
+                  {loading ? t('leadForm.submitting') : t('leadForm.submit')}
                 </Button>
               </div>
             </form>
@@ -140,10 +142,10 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
           >
             <div className="text-5xl mb-4">✓</div>
             <h3 className="text-h3 font-bold text-primary-blue mb-2">
-              Demande reçue !
+              {t('leadForm.successTitle')}
             </h3>
             <p className="text-neutral-subtext">
-              Nous vous enverrons un sample pack à {email} dans les 24h.
+              {t('leadForm.successMessage', {email})}
             </p>
           </motion.div>
         )}
@@ -151,6 +153,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
         {/* Bouton fermeture */}
         <button
           onClick={onClose}
+          aria-label={t('leadForm.close')}
           className="absolute top-4 right-4 text-neutral-subtext hover:text-neutral-text"
         >
           ✕

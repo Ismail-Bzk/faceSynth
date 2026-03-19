@@ -8,15 +8,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'FaceSynth – RGPD Synthetic Face Pack',
-  description: 'Dataset de visages synthétiques 100% RGPD pour entraîner vos modèles de computer vision sans données personnelles.',
-  keywords: 'synthetic faces, computer vision, RGPD, dataset, IA, machine learning',
-  authors: [{ name: 'FaceSynth Team' }],
-  openGraph: {
-    title: 'FaceSynth – RGPD Synthetic Face Pack',
-    description: 'Dataset de visages synthétiques 100% RGPD pour entraîner vos modèles de computer vision.',
-    type: 'website',
-  },
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+  ),
 };
 
 export default function RootLayout({
