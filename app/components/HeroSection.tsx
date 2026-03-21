@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Button } from './common/Button';
 import { LeadCaptureForm } from './LeadCaptureForm';
 
@@ -15,6 +16,17 @@ export const HeroSection: React.FC = () => {
   // 🔑 Charger les traductions avec useTranslations()
   const t = useTranslations();
   const [showForm, setShowForm] = useState(false);
+  const syntheticFaceImages = [
+    '/images/faces/face-1.jpg',
+    '/images/faces/face-2.svg',
+    '/images/faces/face-3.svg',
+    '/images/faces/face-4.svg',
+    '/images/faces/face-5.svg',
+    '/images/faces/face-6.svg',
+    '/images/faces/face-7.svg',
+    '/images/faces/face-8.svg',
+    '/images/faces/face-9.svg',
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -105,7 +117,7 @@ export const HeroSection: React.FC = () => {
             <div className="relative w-full h-full max-w-md">
               {/* Grille placeholder pour les visages synthétiques */}
               <div className="grid grid-cols-3 gap-3 w-full h-full">
-                {[...Array(9)].map((_, i) => (
+                {syntheticFaceImages.map((faceSrc, i) => (
                   <motion.div
                     key={i}
                     className="bg-gradient-to-br from-primary-blue/10 to-primary-indigo/10 rounded-lg border border-primary-blue/20 flex items-center justify-center relative overflow-hidden group"
@@ -114,9 +126,17 @@ export const HeroSection: React.FC = () => {
                     transition={{ delay: i * 0.1, duration: 0.5 }}
                     whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(37, 99, 235, 0.3)' }}
                   >
+                    <Image
+                      src={faceSrc}
+                      alt={`Synthetic face ${i + 1}`}
+                      fill
+                      sizes="(max-width: 640px) 33vw, 120px"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      priority={i < 3}
+                    />
                     {/* Simulation d'annotations (landmarks, bounding box) */}
-                    <div className="absolute inset-1 border border-primary-blue/30 rounded"></div>
-                    <div className="w-8 h-8 bg-gradient-to-r from-primary-blue to-primary-indigo rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-1 border border-primary-blue/30 rounded pointer-events-none"></div>
+                    <div className="w-8 h-8 bg-gradient-to-r from-primary-blue to-primary-indigo rounded-full opacity-50 group-hover:opacity-100 transition-opacity relative z-10"></div>
                     <div className="absolute top-1 right-1 text-xs text-primary-blue opacity-0 group-hover:opacity-100 transition-opacity">
                       {`#${i + 1}`}
                     </div>
