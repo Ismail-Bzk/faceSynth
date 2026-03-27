@@ -29,7 +29,6 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({ onClose }) => 
     // Simulation d'envoi de formulaire (à remplacer par API réelle)
     try {
       // await fetch('/api/leads', { ... })
-      console.log('Form submitted:', { email, company, message });
       
       // Simule un délai réseau
       await new Promise(resolve => setTimeout(resolve, 800));
